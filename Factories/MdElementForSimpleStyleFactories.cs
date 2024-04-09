@@ -89,12 +89,32 @@ namespace CreateXMI.Factories
                     "SHOW_HEADER_IN_BOLD^USE_FILL_COLOR^AUTOSIZE^PEN_COLOR^FILL_COLOR^QNAME_DISPLAY_MODE^USE_FIXED_CONNECTION_POINTS"
 
                     ),
-               MdElementForSimpleStyleFactories. CreateClassElementForShapes("ExtendableManager",
+               MdElementForSimpleStyleFactories.CreateClassElementForShapes("ExtendableManager",
                 "Shapes",
                 "_19_0beta_1_903028d_1491458171509_679571_3",
                 "_19_0beta_1_903028d_1491458171509_49302_1",
                 CreateClassElementListForShapes()),
-
+               MdElementForSimpleStyleFactories.CreateClassElementForSymbol("ExtendableManager",
+                "Symbol",
+                "_19_0beta_1_903028d_1491458171509_49302_1",
+                CreateClassElementListForSymbol()),
+                MdElementForSimpleStyleFactories.CreateClassElementForSysMLBlockDefinitionDiagram(
+                    "PropertyManagerByDiagram",
+                "SysML Block Definition Diagram",
+                "_16_8beta_2104050f_1268298873363_492268_7965","_19_0beta_1_903028d_1491458171517_36964_121",
+                CreateClassElementListForSysMLBlockDefinitionDiagram1()),
+                MdElementForSimpleStyleFactories.CreateClassElementForSysMLBlockDefinitionDiagram(
+                    "PropertyManagerByDiagram",
+                "SysML Block Definition Diagram",
+                "_16_8beta_2104050f_1268300673012_383197_7966","_19_0beta_1_903028d_1491458171510_495256_18",
+                CreateClassElementListForSysMLBlockDefinitionDiagram2()),
+                 MdElementForSimpleStyleFactories.CreateClassElementForTextBox("ExtendableManager",
+                "TextBox",
+                "_19_0beta_1_903028d_1491458171510_890066_8",
+                "_19_0beta_1_903028d_1491458171509_679571_3",
+                CreateClassElementListForTextBox(),
+                "SHOW_CONSTRAINTS^TAGGED_VALUE_HORIZONTAL_POSITION^CONSTRAINT_TEXT_MODE^STEREOTYPE_FONT^SUSPEND_LABEL_AUTO_DISPLAY^STEREOTYPE_COLOR^STEREOTYPES_DISPLAY_MODE^SHOW_DERIVED_SIGN^LABEL_ORIENTATION^SHOW_ICONS_IN_COMPARTMENTS^SHOW_HEADER_IN_BOLD^PEN_COLOR^SHOW_TAGGED_VALUES^SHOW_ELEMENT_TYPE_IN_COMPARTMENTS^DSL_STEREOTYPE_DISPLAY_MODE^SHOW_ELEMENT_PROPERTIES^QNAME_DISPLAY_MODE"
+                ),
                          };
         }
         public static MdElement CreateClassElementForAssociation(string elementClass, string name, string propertyManagerID, string parentPropertyManager, List<MdElement> mdElements)
@@ -449,6 +469,93 @@ MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanPrope
         MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_ICONS_IN_COMPARTMENTS", "true"),
         MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_ELEMENT_TYPE_IN_COMPARTMENTS"),
         MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_DERIVED_SIGN"),
+            };
+        }
+
+        public static MdElement CreateClassElementForSymbol(string elementClass, string name, string propertyManagerID, List<MdElement> mdElements)
+        {
+            return new MdElement
+            {
+                ElementClass = elementClass,
+                PropertyManagerID = propertyManagerID,
+                Name = name,
+                MdElements = mdElements
+            };
+        }
+        public static List<MdElement> CreateClassElementListForSymbol()
+        {
+            return new List<MdElement>
+            {
+                MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ColorProperty", "FILL_COLOR", "-52"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "USE_FILL_COLOR", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ColorProperty", "PEN_COLOR", "-12434878"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ColorProperty", "TEXT_COLOR", "-16777216"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("NumberProperty", "LINE_WIDTH", "1.0"),
+        MdElementForSimpleStyleFactories.CreateClassElementForSize("FontProperty", "FONT", "Arial", "11"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_NUMBER_TAG_NAME", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForIndex("ChoiceProperty", "ELEMENT_NUMBER_DISPLAY_MODE", "1"),
+
+            };
+        }
+        public static MdElement CreateClassElementForSysMLBlockDefinitionDiagram(string elementClass, string name, string propertyManagerID, string parentPropertyManager, List<MdElement> mdElements)
+        {
+            return new MdElement
+            {
+                ElementClass = elementClass,
+                PropertyManagerID = propertyManagerID,
+                Name = name,
+                ParentPropertyManager = parentPropertyManager,
+                MdElements = mdElements
+            };
+        }
+        public static List<MdElement> CreateClassElementListForSysMLBlockDefinitionDiagram1()
+        {
+            return new List<MdElement>
+            {
+                MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_ABBREVIATED_DIAGRAM_TYPE", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_DIAGRAM_TYPE", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_PARAMETERS"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_CONTEXT_TYPE", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_FRAME_OWNER"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "USE_ROUNDED_CORNERS"),
+        MdElementForSimpleStyleFactories.CreateClassElementForIndex("ChoiceProperty", "STEREOTYPES_DISPLAY_MODE", "1"),
+
+            };
+        }
+
+        public static List<MdElement> CreateClassElementListForSysMLBlockDefinitionDiagram2()
+        {
+            return new List<MdElement>
+            {
+                 MdElementForSimpleStyleFactories.CreateClassElementForIndex("ChoiceProperty", "STEREOTYPES_DISPLAY_MODE", "1"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_TAGGED_VALUES"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_ROLE_VISIBILITY"),
+
+            };
+        }
+
+        public static MdElement CreateClassElementForTextBox(string elementClass, string name, string propertyManagerID, string parentPropertyManager, List<MdElement> mdElements, string hiddenProperties)
+        {
+            return new MdElement
+            {
+                ElementClass = elementClass,
+                PropertyManagerID = propertyManagerID,
+                Name = name,
+                ParentPropertyManager = parentPropertyManager,
+                MdElements = mdElements,
+                HiddenProperties = new Value { ValueContent = hiddenProperties }
+
+            };
+        }
+
+        public static List<MdElement> CreateClassElementListForTextBox()
+        {
+            return new List<MdElement>
+            {
+                 MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "USE_FILL_COLOR"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "WRAP_WORDS", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "HTML_TEXT"),
+
             };
         }
     }
