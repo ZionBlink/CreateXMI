@@ -10,9 +10,10 @@ namespace CreateXMI.Factories
             {
                 MdElements = new List<MdElement> {
                     new MdElement
-                    {
+                    { 
                         ElementClass="SimpleStyle",
-                         MdElements = MdElementForAssociationFactories.CreateClassElementListForAssociation()
+                        MdElements = MdElementForSimpleStyleFactories.CreateClassElementListForSimpleStyle(),
+
 
                     },
 
