@@ -155,10 +155,10 @@ namespace CreateXMI
                 Type = "uml:Model",
                 Id = "eee_1045467100313_135436_1",
                 Name = "Model",
-                ownedComment = ownedComment,
-                packagedElements = packagedElements,
-                profileApplication = profileApplication,
-                xmiExtension = XmiExtension,
+                OwnedComment = ownedComment,
+                PackagedElements = packagedElements,
+                ProfileApplication = profileApplication,
+                XmiExtension = XmiExtension,
             };
 
             XMI xmi = new XMI
@@ -168,7 +168,7 @@ namespace CreateXMI
                     Exporter = "MagicDraw UML",
                     ExporterVersion = "2022x v7"
                 },
-                model = model,
+                Model = model,
                 Extensions = new List<XmiExtension>
                 {
                     XmiExtensionBuilder.CreateMagicDraw2022Extension(),
@@ -178,10 +178,10 @@ namespace CreateXMI
 
 
 
-            xmi.model.xmiExtension.ModelExtension.OwnedDiagram.XmiExtension.DiagramRepresentation.DiagramRepresentationObject.xmlns.Add("binary", "http://www.nomagic.com/ns/cameo/client/binary/1.0");
-            xmi.model.xmiExtension.ModelExtension.OwnedDiagram.XmiExtension.DiagramRepresentation.DiagramRepresentationObject.xmlns.Add("diagram", "http://www.nomagic.com/ns/magicdraw/core/diagram/1.0");
-            xmi.model.xmiExtension.ModelExtension.OwnedDiagram.XmiExtension.DiagramRepresentation.DiagramRepresentationObject.xmlns.Add("xmi", "http://www.omg.org/XMI");
-            xmi.model.xmiExtension.ModelExtension.OwnedDiagram.XmiExtension.DiagramRepresentation.DiagramRepresentationObject.xmlns.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
+            xmi.Model.XmiExtension.ModelExtension.OwnedDiagram.XmiExtension.DiagramRepresentation.DiagramRepresentationObject.xmlns.Add("binary", "http://www.nomagic.com/ns/cameo/client/binary/1.0");
+            xmi.Model.XmiExtension.ModelExtension.OwnedDiagram.XmiExtension.DiagramRepresentation.DiagramRepresentationObject.xmlns.Add("diagram", "http://www.nomagic.com/ns/magicdraw/core/diagram/1.0");
+            xmi.Model.XmiExtension.ModelExtension.OwnedDiagram.XmiExtension.DiagramRepresentation.DiagramRepresentationObject.xmlns.Add("xmi", "http://www.omg.org/XMI");
+            xmi.Model.XmiExtension.ModelExtension.OwnedDiagram.XmiExtension.DiagramRepresentation.DiagramRepresentationObject.xmlns.Add("xsi", "http://www.w3.org/2001/XMLSchema-instance");
 
             // Use SerializationHelper to serialize the model to XML
             string xmlContent = SerializationHelper.SerializeObjectToXml(xmi);

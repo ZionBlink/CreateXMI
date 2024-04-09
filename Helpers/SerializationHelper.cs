@@ -18,7 +18,7 @@ namespace CreateXMI.Helper
 
             using (var writer = new StringWriter(sb))
             {
-                serializer.Serialize(writer, xmi, xmi.xmlns); // 使用xmi对象中定义的命名空间
+                serializer.Serialize(writer, xmi, xmi.Xmlns); // 使用xmi对象中定义的命名空间
             }
 
             return sb.ToString();

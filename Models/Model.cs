@@ -20,17 +20,17 @@ namespace CreateXMI.Models
 
         [XmlElement("ownedComment", Namespace = "")]
         //[XmlElement]
-        public OwnedComment ownedComment { get; set; }
+        public OwnedComment OwnedComment { get; set; }
 
         [XmlElement("packagedElement", Namespace = "")]
         //[XmlElement]
-        public PackagedElement[] packagedElements { get; set; }
+        public PackagedElement[] PackagedElements { get; set; }
 
         [XmlElement("profileApplication", Namespace = "")]
-        public ProfileApplication profileApplication { get; set; }
+        public ProfileApplication ProfileApplication { get; set; }
 
         [XmlElement("Extension", Namespace = "http://www.omg.org/spec/XMI/20131001")]
-        public XmiExtension xmiExtension { get; set; }
+        public XmiExtension XmiExtension { get; set; }
 
     }
 }
