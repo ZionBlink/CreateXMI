@@ -5,17 +5,6 @@ namespace CreateXMI.Factories
     public class MdElementForSimpleStyleFactories
     {
 
-        public static MdElement CreateClassElementForAssociation(string elementClass, string name, string propertyManagerID, string parentPropertyManager, List<MdElement> mdElements)
-        {
-            return new MdElement
-            {
-                ElementClass = elementClass,
-                PropertyManagerID = propertyManagerID,
-                Name = name,
-                ParentPropertyManager = parentPropertyManager,
-                MdElements = mdElements
-            };
-        }
 
         public static MdElement CreateClassElementForBasicElement(string elementClass, string propertyID, string value = null)
         {
@@ -76,9 +65,42 @@ namespace CreateXMI.Factories
                "_19_0beta_1_903028d_1491458171509_679571_3",
                CreateClassElementListForClass(),
                "SUSPEND_LABEL_AUTO_DISPLAY^SHOW_TAGGED_VALUES^LABEL_ORIENTATION"
-               )
+               ),
+               MdElementForSimpleStyleFactories.CreateClassElementForDiagram(
+                   "ExtendableManager",
+                   "Diagram",
+                   "_19_0beta_1_903028d_1491458171517_36964_121",
+                   "_19_0beta_1_903028d_1491458171509_49302_1",
+                   CreateClassElementListForDiagram(),
+                   "USE_FILL_COLOR^FILL_COLOR"
+                   ),
+                MdElementForSimpleStyleFactories.CreateClassElementForPaths("ExtendableManager",
+                "Paths",
+                "_19_0beta_1_903028d_1491458171509_301592_2",
+                "_19_0beta_1_903028d_1491458171509_49302_1",
+                CreateClassElementListForPaths()
+                ),
+                MdElementForSimpleStyleFactories.CreateClassElementForPaths(
+                    "ExtendableManager",
+                    "Role",
+                    "_19_0beta_1_903028d_1491458171510_495256_18",
+                    "_19_0beta_1_903028d_1491458171509_679571_3",
+                    CreateClassElementListForRole()
+                    ),
+
 
                          };
+        }
+        public static MdElement CreateClassElementForAssociation(string elementClass, string name, string propertyManagerID, string parentPropertyManager, List<MdElement> mdElements)
+        {
+            return new MdElement
+            {
+                ElementClass = elementClass,
+                PropertyManagerID = propertyManagerID,
+                Name = name,
+                ParentPropertyManager = parentPropertyManager,
+                MdElements = mdElements
+            };
         }
 
         public static List<MdElement> CreateClassElementListForAssociation()
@@ -277,5 +299,108 @@ MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanPrope
 
             };
         }
+
+        public static MdElement CreateClassElementForDiagram(string elementClass, string name, string propertyManagerID, string parentPropertyManager, List<MdElement> mdElements, string hiddenProperties)
+        {
+            return new MdElement
+            {
+                ElementClass = elementClass,
+                PropertyManagerID = propertyManagerID,
+                Name = name,
+                ParentPropertyManager = parentPropertyManager,
+                MdElements = mdElements,
+                HiddenProperties = new Value { ValueContent = hiddenProperties }
+            };
+        }
+        public static List<MdElement> CreateClassElementListForDiagram()
+        {
+            return new List<MdElement>
+    {
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ColorProperty", "DIAGRAM_BACKGROUND_COLOR", "-1"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "USE_GRADIENT_FOR_FILL", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "USE_SHADOW_FOR_SHAPES", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_GRID"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("NumberProperty", "GRID_SIZE", "7.0"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "USE_GRID_FOR_PATHS", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "USE_GRID_FOR_SHAPES", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_MESSAGE_NUMBERS", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "USE_ADVANCED_NUMBERING", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_ACTIVATIONS", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_DIAGRAM_INFO"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_DIAGRAM_OWNER"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_DIAGRAM_FRAME", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_ABBREVIATED_DIAGRAM_TYPE"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_DIAGRAM_NAME", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_DIAGRAM_TYPE"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_PARAMETERS", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_CONTEXT_NAME", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_CONTEXT_TYPE"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_FRAME_OWNER", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "AUTOSIZE"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ChoiceProperty", "ASPECT_RATIO"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "USE_ROUNDED_CORNERS", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ChoiceProperty", "STEREOTYPES_DISPLAY_MODE"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ChoiceProperty", "DSL_STEREOTYPE_DISPLAY_MODE"),
+        MdElementForSimpleStyleFactories.CreateClassElementForIndex("ChoiceProperty", "USE_STEREOTYPE", "1"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ColorProperty", "STEREOTYPE_COLOR", "-16777216"),
+        MdElementForSimpleStyleFactories.CreateClassElementForSize("FontProperty", "STEREOTYPE_FONT", "Arial", "11"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ChoiceProperty", "DIAGRAM_ORIENTATION"),
+        MdElementForSimpleStyleFactories.CreateClassElementForIndex("ChoiceProperty", "LINE_JUMP_PLACE", "1"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SUSPEND_SHAPES_AUTO_RESIZE"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SUSPEND_LABELS_AUTO_DISPLAY"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ChoiceProperty", "SUSPEND_SHAPE_AUTO_RESIZE"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_SYSML_INTERNAL_PROPERTIES_COMPARTMENTS", "true"),
+
+    };
+        }
+
+        public static MdElement CreateClassElementForPaths(string elementClass, string name, string propertyManagerID, string parentPropertyManager, List<MdElement> mdElements)
+        {
+            return new MdElement
+            {
+                ElementClass = elementClass,
+                PropertyManagerID = propertyManagerID,
+                Name = name,
+                ParentPropertyManager = parentPropertyManager,
+                MdElements = mdElements
+            };
+        }
+
+        public static List<MdElement> CreateClassElementListForPaths()
+        {
+
+            return new List<MdElement> {
+            MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "USE_FILL_COLOR"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ChoiceProperty", "LINK_LINE_STYLE"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "IS_ROUNDED"),
+        MdElementForSimpleStyleFactories.CreateClassElementForIndex("ChoiceProperty", "CONSTRAINT_TEXT_MODE", "1"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ChoiceProperty", "SUSPEND_SHAPE_AUTO_RESIZE"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ChoiceProperty", "SUSPEND_LABEL_AUTO_DISPLAY"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ChoiceProperty", "LABEL_ORIENTATION"),
+
+            };
+        }
+
+        public static MdElement CreateClassElementForRole(string elementClass, string name, string propertyManagerID, string parentPropertyManager, List<MdElement> mdElements, string hiddenProperties)
+        {
+            return new MdElement
+            {
+                ElementClass = elementClass,
+                PropertyManagerID = propertyManagerID,
+                Name = name,
+                ParentPropertyManager = parentPropertyManager,
+                MdElements = mdElements,
+                HiddenProperties = new Value { ValueContent = hiddenProperties }
+            };
+        }
+        public static List<MdElement> CreateClassElementListForRole()
+        {
+            return new List<MdElement>
+            {
+                //todo
+            };
+        }
+
+
     }
 }
