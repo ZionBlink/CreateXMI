@@ -80,14 +80,20 @@ namespace CreateXMI.Factories
                 "_19_0beta_1_903028d_1491458171509_49302_1",
                 CreateClassElementListForPaths()
                 ),
-                MdElementForSimpleStyleFactories.CreateClassElementForPaths(
+                MdElementForSimpleStyleFactories.CreateClassElementForRole(
                     "ExtendableManager",
                     "Role",
                     "_19_0beta_1_903028d_1491458171510_495256_18",
                     "_19_0beta_1_903028d_1491458171509_679571_3",
-                    CreateClassElementListForRole()
-                    ),
+                    CreateClassElementListForRole(),
+                    "SHOW_HEADER_IN_BOLD^USE_FILL_COLOR^AUTOSIZE^PEN_COLOR^FILL_COLOR^QNAME_DISPLAY_MODE^USE_FIXED_CONNECTION_POINTS"
 
+                    ),
+               MdElementForSimpleStyleFactories. CreateClassElementForShapes("ExtendableManager",
+                "Shapes",
+                "_19_0beta_1_903028d_1491458171509_679571_3",
+                "_19_0beta_1_903028d_1491458171509_49302_1",
+                CreateClassElementListForShapes()),
 
                          };
         }
@@ -397,10 +403,53 @@ MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanPrope
         {
             return new List<MdElement>
             {
-                //todo
+                MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ChoiceProperty", "STEREOTYPES_DISPLAY_MODE"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_ROLE_NAME", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_ROLE_NAVIGABILITY", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_ROLE_VISIBILITY", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_ROLE_MULTIPLICITY", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_ROLE_PROPERTY_STRING", "true"),
+
             };
         }
 
-
+        public static MdElement CreateClassElementForShapes(string elementClass, string name, string propertyManagerID, string parentPropertyManager, List<MdElement> mdElements)
+        {
+            return new MdElement
+            {
+                ElementClass = elementClass,
+                PropertyManagerID = propertyManagerID,
+                Name = name,
+                ParentPropertyManager = parentPropertyManager,
+                MdElements = mdElements
+            };
+        }
+        public static List<MdElement> CreateClassElementListForShapes()
+        {
+            return new List<MdElement>
+            {
+                   MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "AUTOSIZE"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "USE_FIXED_CONNECTION_POINTS"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ChoiceProperty", "SUSPEND_SHAPE_AUTO_RESIZE"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ChoiceProperty", "SUSPEND_LABEL_AUTO_DISPLAY"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ChoiceProperty", "LABEL_ORIENTATION"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_HEADER_IN_BOLD", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ChoiceProperty", "TEXT_VERTICAL_POSITION"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ColorProperty", "STEREOTYPE_COLOR", "-16777216"),
+        MdElementForSimpleStyleFactories.CreateClassElementForSize("FontProperty", "STEREOTYPE_FONT", "Arial", "11"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ChoiceProperty", "STEREOTYPES_DISPLAY_MODE"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ChoiceProperty", "DSL_STEREOTYPE_DISPLAY_MODE"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_CONSTRAINTS", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("ChoiceProperty", "QNAME_DISPLAY_MODE"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "WRAP_WORDS"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_TAGGED_VALUES", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForIndex("ChoiceProperty", "TAGGED_VALUE_HORIZONTAL_POSITION", "2"),
+        MdElementForSimpleStyleFactories.CreateClassElementForIndex("ChoiceProperty", "CONSTRAINT_TEXT_MODE", "1"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_ELEMENT_PROPERTIES"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_ICONS_IN_COMPARTMENTS", "true"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_ELEMENT_TYPE_IN_COMPARTMENTS"),
+        MdElementForSimpleStyleFactories.CreateClassElementForBasicElement("BooleanProperty", "SHOW_DERIVED_SIGN"),
+            };
+        }
     }
 }
