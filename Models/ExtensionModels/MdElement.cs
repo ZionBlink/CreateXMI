@@ -13,42 +13,44 @@ namespace CreateXMI.Models.ExtensionModels
 
         [XmlElement("elementID")]
         public ElementID ElementID { get; set; }  // 假设elementID也有特定的结构
-
-        [XmlElement("geometry")]
-        public string Geometry { get; set; }
-
-        [XmlElement("text")]
-        public string Text { get; set; }
-
-        [XmlElement("mdOwnedViews")]
-        public MdOwnedViews MdOwnedViews { get; set; }  // 假设mdOwnedViews也有特定的结构
-
-        [XmlElement("symbolStyleID")]
-        public string SymbolStyleId { get; set; }
-
-        // Additional elements specific to the 'Association' elementClass
+                                                  // Additional elements specific to the 'Association' elementClass
         [XmlElement("linkFirstEndID", Namespace = "http://www.omg.org/spec/XMI/20131001")]
         public ElementID LinkFirstEndId { get; set; }
 
         [XmlElement("linkSecondEndID", Namespace = "http://www.omg.org/spec/XMI/20131001")]
         public ElementID LinkSecondEndId { get; set; }
 
+
+        [XmlElement("geometry")]
+        public string Geometry { get; set; }
         [XmlElement("compartment")]
         public List<Compartment> Compartments { get; set; }
 
         [XmlElement("nameVisible")]
         public NameVisible NameVisible { get; set; }
 
+        [XmlElement("mdOwnedViews")]
+        public MdOwnedViews MdOwnedViews { get; set; }
+        [XmlElement("text")]
+        public string Text { get; set; }
+
+
+        [XmlElement("roleNameID")]
+        public ElementID RoleNameID { get; set; }
         [XmlElement("associationFirstEndID", Namespace = "http://www.omg.org/spec/XMI/20131001")]
         public ElementID AssociationFirstEndId { get; set; }
 
         [XmlElement("associationSecondEndID", Namespace = "http://www.omg.org/spec/XMI/20131001")]
         public ElementID AssociationSecondEndId { get; set; }
 
-        // ... other properties as needed
 
-        [XmlElement("roleNameID")]
-        public ElementID RoleNameID { get; set; }
+        [XmlElement("symbolStyleID")]
+        public string SymbolStyleId { get; set; }
+
+        [XmlElement("mdElement")]
+        public List<MdElement> MdElements { get; set; } = new List<MdElement>();
+
+
     }
 
 }

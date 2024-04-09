@@ -1,5 +1,5 @@
-﻿using CreateXMI.Factories;
-using CreateXMI.Helper;
+﻿using CreateXMI.Helper;
+using CreateXMI.Helpers;
 using CreateXMI.Models;
 using System.Xml.Serialization;
 

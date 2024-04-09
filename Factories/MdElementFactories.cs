@@ -2,7 +2,7 @@
 
 namespace CreateXMI.Factories
 {
-    public static class MdElementFactory
+    public class MdElementFactories
     {
         public static MdElement CreateDiagramFrameElement()
         {
@@ -31,7 +31,7 @@ namespace CreateXMI.Factories
             };
         }
 
-        public static MdElement CreateClassElementForRole(string elementClass, string xmiId, string idRef, string geometry, string symbolStyleId, string roleNameId)
+        public static MdElement CreateClassElementForRole(string elementClass, string xmiId, string idRef, string geometry, string symbolStyleId, string roleNameId, MdOwnedViews mdOwnedViews)
         {
             return new MdElement
             {
@@ -41,7 +41,7 @@ namespace CreateXMI.Factories
                 Geometry = geometry,
                 SymbolStyleId = symbolStyleId,
                 RoleNameID = new ElementID { IdRef = roleNameId },
-                MdOwnedViews = new MdOwnedViews()
+                MdOwnedViews = mdOwnedViews
             };
         }
         // 为其他类型的mdElement添加更多的工厂方法
@@ -50,15 +50,15 @@ namespace CreateXMI.Factories
             var mdOwnedViews = new MdOwnedViews
             {
                 MdElements = new List<MdElement> {
-                    MdElementFactory.CreateDiagramFrameElement(),
-                    MdElementFactory.CreateClassElement(
+                    MdElementFactories.CreateDiagramFrameElement(),
+                    MdElementFactories.CreateClassElement(
                     "Class",
                     "_2022x_29f014a_1711421319439_792255_3244",
                     "_2022x_29f014a_1711421319433_506189_3243",
                     "112, 77, 80, 33",
                     "_17_0_1_e9b034a_1316580179343_836214_11299"
                     ),
-                     MdElementFactory.CreateClassElement(
+                     MdElementFactories.CreateClassElement(
                     "Class",
                     "_2022x_29f014a_1711421923724_173371_3276",
                     "_2022x_29f014a_1711421923720_172724_3275",
@@ -70,7 +70,7 @@ namespace CreateXMI.Factories
             return mdOwnedViews;
         }
 
-        public static MdElement CreateMdOwnedViews1()
+        public static MdElement CreateMdElement()
         {
 
 
@@ -88,18 +88,33 @@ namespace CreateXMI.Factories
                 new Compartment { CompartmentId = "CONVEYED_INFORMATION_B", IsContentLocked = true }
             },
                 NameVisible = new NameVisible { Value = true },
-                // Initialize MdOwnedViews with Roles and other nested MdElement as per your XML.
                 MdOwnedViews = new MdOwnedViews
                 {
                     MdElements = new List<MdElement>
                     {
-                        MdElementFactory.CreateClassElementForRole("Role",
+                        MdElementFactories.CreateClassElementForRole("Role",
                                                                    "_2022x_29f014a_1711423269462_968451_3312",
                                                                    "_2022x_29f014a_1711423269457_373723_3310",
                                                                    "167, 110, 10, 10",
-                                                                   "_17_0_1_e9b034a_1316580179343_836214_11299",
-                                                                   "_2022x_29f014a_1711423269512_434864_3318"
-                                                                  
+                                                                   "_16_8beta_2104050f_1268300673012_383197_7966",
+                                                                   "_2022x_29f014a_1711423269512_434864_3318",
+                                                                 MdOwnedViewsFactories.CreateClassMdOwnedViews(
+                                                                     "TextBox"
+                                                                 ,"_2022x_29f014a_1711423269512_434864_3318"
+                                                                 ,"_2022x_29f014a_1711423269457_373723_3310"
+                                                                 ,"90, 133, 79, 12"
+                                                                 ,"_19_0beta_1_903028d_1491458171510_890066_8"
+                                                                 ,"模块1---模----块")
+                                                                   ),
+                        MdElementFactories.CreateClassElement(
+                             "Role"
+                             ,  "_2022x_29f014a_1711423269462_23323_3315"
+                             ,
+                                                                   "_2022x_29f014a_1711423269457_155826_3311",
+                                                                   "167, 172, 10, 10",
+                                                                   "_16_8beta_2104050f_1268300673012_383197_7966"
+
+
                                                                    ),
                     }
                 },

@@ -21,7 +21,11 @@ namespace CreateXMI.Models.ExtensionModels
         [XmlElement("mdOwnedViews")]
         public MdOwnedViews MdOwnedViews { get; set; }
 
-        [XmlElement("MdElement")]
+        [XmlElement("mdElement")]
         public MdElement MdElement { get; set; }
+
+        [XmlElement("symbolStyles")]
+        public SymbolStyles SymbolStyles { get; set; }
+
     }
 }
