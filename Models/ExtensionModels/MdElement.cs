@@ -46,7 +46,10 @@ namespace CreateXMI.Models.ExtensionModels
 
         [XmlElement("symbolStyleID")]
         public string SymbolStyleId { get; set; }
-        
+
+        [XmlElement("stereotype")]
+        public string Stereotype { get; set; }
+
         [XmlElement("name")]
         public string Name { get; set; }
 
@@ -61,6 +64,8 @@ namespace CreateXMI.Models.ExtensionModels
 
         [XmlElement("value")]
         public Value Value { get; set; }
+        [XmlElement("index")]
+        public Value Index { get; set; }
         [XmlElement("fontName")]
         public string FontName { get; set; }
         [XmlElement("size")]
@@ -68,6 +73,9 @@ namespace CreateXMI.Models.ExtensionModels
 
         [XmlElement("mdElement")]
         public List<MdElement> MdElements { get; set; } = new List<MdElement>();
+
+        [XmlElement("hiddenProperties")]
+        public Value HiddenProperties { get; set; }
     }
 
 }
