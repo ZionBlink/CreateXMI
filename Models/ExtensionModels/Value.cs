@@ -7,9 +7,9 @@ using System.Xml.Serialization;
 
 namespace CreateXMI.Models.ExtensionModels
 {
-    public class NameVisible
+    public class Value
     {
         [XmlAttribute("value", Namespace = "http://www.omg.org/spec/XMI/20131001")]
-        public string Value { get; set; } // 如果在其他地方是字符串，这里也应该是字符串
+        public string ValueContent { get; set; }
     }
 }

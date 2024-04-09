@@ -9,15 +9,13 @@ namespace CreateXMI.Factories
             var symbolStyles = new SymbolStyles()
             {
                 MdElements = new List<MdElement> {
-                    new MdElement 
+                    new MdElement
                     {
                         ElementClass="SimpleStyle",
-                         MdElements = new List<MdElement> {
-                         
-                         }
+                         MdElements = MdElementForAssociationFactories.CreateClassElementListForAssociation()
 
                     },
-                    
+
 
                 }
             };

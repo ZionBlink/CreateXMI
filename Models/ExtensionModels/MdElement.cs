@@ -46,11 +46,28 @@ namespace CreateXMI.Models.ExtensionModels
 
         [XmlElement("symbolStyleID")]
         public string SymbolStyleId { get; set; }
+        
+        [XmlElement("name")]
+        public string Name { get; set; }
+
+        [XmlElement("propertyManagerID")]
+        public string PropertyManagerID { get; set; }
+
+        [XmlElement("parentPropertyManager")]
+        public string ParentPropertyManager { get; set; }
+
+        [XmlElement("propertyID")]
+        public string PropertyID { get; set; }
+
+        [XmlElement("value")]
+        public Value Value { get; set; }
+        [XmlElement("fontName")]
+        public string FontName { get; set; }
+        [XmlElement("size")]
+        public Value Size { get; set; }
 
         [XmlElement("mdElement")]
         public List<MdElement> MdElements { get; set; } = new List<MdElement>();
-
-
     }
 
 }

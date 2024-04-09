@@ -45,30 +45,7 @@ namespace CreateXMI.Factories
             };
         }
         // 为其他类型的mdElement添加更多的工厂方法
-        public static MdOwnedViews CreateMdOwnedViews()
-        {
-            var mdOwnedViews = new MdOwnedViews
-            {
-                MdElements = new List<MdElement> {
-                    MdElementFactories.CreateDiagramFrameElement(),
-                    MdElementFactories.CreateClassElement(
-                    "Class",
-                    "_2022x_29f014a_1711421319439_792255_3244",
-                    "_2022x_29f014a_1711421319433_506189_3243",
-                    "112, 77, 80, 33",
-                    "_17_0_1_e9b034a_1316580179343_836214_11299"
-                    ),
-                     MdElementFactories.CreateClassElement(
-                    "Class",
-                    "_2022x_29f014a_1711421923724_173371_3276",
-                    "_2022x_29f014a_1711421923720_172724_3275",
-                    "98, 182, 80, 33",
-                    "_17_0_1_e9b034a_1316580179343_836214_11299"
-                    ),
-                }
-            };
-            return mdOwnedViews;
-        }
+
 
         public static MdElement CreateMdElement()
         {
@@ -87,7 +64,7 @@ namespace CreateXMI.Factories
                 new Compartment { CompartmentId = "CONVEYED_INFORMATION_A", IsContentLocked = true },
                 new Compartment { CompartmentId = "CONVEYED_INFORMATION_B", IsContentLocked = true }
             },
-                NameVisible = new NameVisible { Value = true },
+                NameVisible = new NameVisible { Value = "true" },
                 MdOwnedViews = new MdOwnedViews
                 {
                     MdElements = new List<MdElement>

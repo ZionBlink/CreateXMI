@@ -17,7 +17,7 @@ namespace CreateXMI.Helpers
                     Name = "BINARY-4afab4af-bea9-49d8-9b77-dc04dbf4a7f8",
                     Type = "XML",
                     Header = "&lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;",
-                    MdOwnedViews = MdElementFactories.CreateMdOwnedViews(),
+                    MdOwnedViews = MdOwnedViewsFactories.CreateMdOwnedViews(),
                     MdElement = MdElementFactories.CreateMdElement(),
                     SymbolStyles =SymbolStylesFactories.CreateSymbolStyles(),
                 }
