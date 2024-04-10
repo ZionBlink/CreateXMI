@@ -81,7 +81,7 @@ namespace CreateXMI.Factories
                                                                  ,"_2022x_29f014a_1711423269457_373723_3310"
                                                                  ,"90, 133, 79, 12"
                                                                  ,"_19_0beta_1_903028d_1491458171510_890066_8"
-                                                                 ,"模块1---模----块")
+                                                                 ,"模块1---模块----")
                                                                    ),
                         MdElementFactories.CreateClassElement(
                              "Role"

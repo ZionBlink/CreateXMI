@@ -8,12 +8,19 @@ namespace CreateXMI.Factories
 
         public static MdElement CreateClassElementForBasicElement(string elementClass, string propertyID, string value = null)
         {
+            if (value == null)
+            {
+                return new MdElement
+                {
+                    ElementClass = elementClass,
+                    PropertyID = propertyID,
+                };
+            }
             return new MdElement
             {
                 ElementClass = elementClass,
                 PropertyID = propertyID,
                 Value = new Value { ValueContent = value },
-
             };
         }
 
@@ -28,13 +35,13 @@ namespace CreateXMI.Factories
 
             };
         }
-        public static MdElement CreateClassElementForIndex(string elementClass, string propertyID, string index, string value = null)
+        public static MdElement CreateClassElementForIndex(string elementClass, string propertyID, string index)
         {
             return new MdElement
             {
                 ElementClass = elementClass,
                 PropertyID = propertyID,
-                Index = new Value { ValueContent = value },
+                Index = new Value { ValueContent = index },
 
             };
         }

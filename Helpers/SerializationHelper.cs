@@ -14,11 +14,23 @@ namespace CreateXMI.Helper
         public static string SerializeObjectToXml(XMI xmi)
         {
             var serializer = new XmlSerializer(typeof(XMI));
+            var settings = new XmlWriterSettings
+            {
+                OmitXmlDeclaration = false,
+                Indent = true, // 根据需要设置
+                Encoding = new UTF8Encoding(false) // 防止BOM的写入
+            };
+
             var sb = new StringBuilder();
 
-            using (var writer = new StringWriter(sb))
+            // 使用XmlWriter创建XML，允许更多的控制
+            using (var writer = XmlWriter.Create(sb, settings))
             {
-                serializer.Serialize(writer, xmi, xmi.Xmlns); // 使用xmi对象中定义的命名空间
+                // 为XmlSerializer提供XmlSerializerNamespaces，如果已定义
+                XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
+                
+
+                serializer.Serialize(writer, xmi, namespaces);
             }
 
             return sb.ToString();

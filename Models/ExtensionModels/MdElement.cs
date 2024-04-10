@@ -14,10 +14,10 @@ namespace CreateXMI.Models.ExtensionModels
         [XmlElement("elementID")]
         public ElementID ElementID { get; set; }  // 假设elementID也有特定的结构
                                                   // Additional elements specific to the 'Association' elementClass
-        [XmlElement("linkFirstEndID", Namespace = "http://www.omg.org/spec/XMI/20131001")]
+        [XmlElement("linkFirstEndID")]
         public ElementID LinkFirstEndId { get; set; }
 
-        [XmlElement("linkSecondEndID", Namespace = "http://www.omg.org/spec/XMI/20131001")]
+        [XmlElement("linkSecondEndID" )]
         public ElementID LinkSecondEndId { get; set; }
 
 
@@ -37,10 +37,10 @@ namespace CreateXMI.Models.ExtensionModels
 
         [XmlElement("roleNameID")]
         public ElementID RoleNameID { get; set; }
-        [XmlElement("associationFirstEndID", Namespace = "http://www.omg.org/spec/XMI/20131001")]
+        [XmlElement("associationFirstEndID" )]
         public ElementID AssociationFirstEndId { get; set; }
 
-        [XmlElement("associationSecondEndID", Namespace = "http://www.omg.org/spec/XMI/20131001")]
+        [XmlElement("associationSecondEndID")]
         public ElementID AssociationSecondEndId { get; set; }
 
 
