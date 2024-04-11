@@ -100,8 +100,7 @@ namespace CreateXMI.Factories
                 SymbolStyleId = "_19_0beta_1_903028d_1491458171517_621864_119"
             };
 
-            // Continue adding other MdElement instances...
-
+          
             return associationElement;
         }
     }
